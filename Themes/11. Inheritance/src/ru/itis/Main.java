@@ -13,6 +13,5 @@ public class Main {
 
 	    grandmotherBatman.feedGrandsons();
 	    grandmother.countOfGrandsons = -100;
-	    int i = 0;
     }
 }
