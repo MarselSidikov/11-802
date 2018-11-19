@@ -19,6 +19,7 @@ public class Logger {
     public static Logger getLogger() {
         return instance;
     }
+
     private static final String PREFIX = "LOGGER ";
 
     private Logger() {
