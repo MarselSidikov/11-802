@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -15,7 +16,16 @@ public class Program {
         list.add(new Human("Марсель", 25, 1.85));
         list.add(new Human("Аделя", 19, 1.65));
         list.add(new Human("Артур", 18, 1.73));
-        Sorter.sort(list);
+//        Sorter.sort(list);
+//        Comparator<Human> comparator = new HumansByHeightComparator();
+//
+//        Sorter.sort(list, new HumansByHeightComparator());
+
+//        Sorter.sort(list, (human1, human2) -> {
+//            return Double.compare(human1.getHeight(), human2.getHeight());
+//        });
+
+        Sorter.sort(list, Comparator.comparingDouble(Human::getHeight));
 
         for (Human human : list) {
             System.out.println(human);
