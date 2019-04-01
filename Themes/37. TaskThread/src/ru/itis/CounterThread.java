@@ -1,9 +1,15 @@
 package ru.itis;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class CounterThread extends Thread {
     private int start;
     private int finish;
     private int array[];
+
+    // private static final Object MUTEX = new Object();
+    private static final Lock lock = new ReentrantLock();
 
     public CounterThread(int start, int finish, int array[]) {
         this.start = start;
@@ -13,8 +19,18 @@ public class CounterThread extends Thread {
 
     @Override
     public void run() {
-        // TODO: посчитать сумму элементов в массиве array от array[start] до
-        // TODO: array[finish]
-        // TODO: и положить ee в глобальную переменную Main.mainSum
+        for (int i = start; i <= finish; i++) {
+            // получение mainSum
+            // получение array[i]
+            // чтение mainSum
+            // чтение array[i]
+            // суммирование значений mainSum и array[i]
+            // запись нового значения mainSum
+//            synchronized (MUTEX) {
+            lock.lock();
+            Main.mainSum += array[i];
+            lock.unlock();
+//            }
+        }
     }
 }

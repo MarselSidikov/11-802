@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static int mainSum = 0;
+    public static int mainSum = 0;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
